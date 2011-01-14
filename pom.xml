@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.frontlinesms.plugins</groupId>
 	<artifactId>frontlinesms-plugin-template</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.00.01-SNAPSHOT</version>
 	<name>Plugin Template</name>
 	<description>A shell of a plugin for FrontlineSMS</description>
 	
