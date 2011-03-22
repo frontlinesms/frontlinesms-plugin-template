@@ -1,31 +1,34 @@
-package net.frontlinesms.plugins.basicplugin;
+package net.frontlinesms.plugins.template;
 
 import net.frontlinesms.FrontlineSMS;
+import net.frontlinesms.PluginManager;
 import net.frontlinesms.plugins.BasePluginController;
+import net.frontlinesms.plugins.PluginController;
 import net.frontlinesms.plugins.PluginControllerProperties;
 import net.frontlinesms.plugins.PluginInitialisationException;
-import net.frontlinesms.plugins.basicplugin.ui.BasicPluginThinletTabController;
+import net.frontlinesms.plugins.PluginProperties;
+import net.frontlinesms.plugins.template.ui.BasicPluginThinletTabController;
 import net.frontlinesms.ui.UiGeneratorController;
 
 import org.springframework.context.ApplicationContext;
 
 @PluginControllerProperties(name = "Basic Plugin", i18nKey = "plugins.template", iconPath = "/icons/basicplugin_logo_small.png", springConfigLocation = "classpath:net/frontlinesms/plugins/basicplugin/basicplugin-spring-hibernate.xml", hibernateConfigPath = "classpath:net/frontlinesms/plugins/basicplugin/basicplugin.hibernate.cfg.xml")
-public class BasicPluginPluginController extends BasePluginController {
-
-	private ApplicationContext appCon;
-	private FrontlineSMS frontlineController;
+public class TemplatePluginController extends BasePluginController {
+	private ApplicationContext applicationContext;
 	
 	protected Object initThinletTab(UiGeneratorController uiController) {
-		return new BasicPluginThinletTabController(this, uiController, appCon).getTab();
+		return new BasicPluginThinletTabController(this, uiController, applicationContext).getTab();
 	}
 
 	public void deinit() {
-
+		// Don't forget to undo everything you did in init() here
+		this.applicationContext = null;
 	}
 
 	public void init(FrontlineSMS frontlineController, ApplicationContext applicationContext) throws PluginInitialisationException {
-		this.appCon = applicationContext;
-		this.frontlineController = frontlineController;
+		this.applicationContext = applicationContext;
+		
+		// you can cache the frontlineController here too, if you need to
+		//this.frontlineController = frontlineController;
 	}
-
 }
