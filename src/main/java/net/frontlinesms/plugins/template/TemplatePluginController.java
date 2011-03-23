@@ -1,12 +1,9 @@
 package net.frontlinesms.plugins.template;
 
 import net.frontlinesms.FrontlineSMS;
-import net.frontlinesms.PluginManager;
 import net.frontlinesms.plugins.BasePluginController;
-import net.frontlinesms.plugins.PluginController;
 import net.frontlinesms.plugins.PluginControllerProperties;
 import net.frontlinesms.plugins.PluginInitialisationException;
-import net.frontlinesms.plugins.PluginProperties;
 import net.frontlinesms.plugins.template.ui.BasicPluginThinletTabController;
 import net.frontlinesms.ui.UiGeneratorController;
 
