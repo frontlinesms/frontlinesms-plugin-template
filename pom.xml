@@ -11,6 +11,14 @@
 		<relativePath>../pom-parent</relativePath>
 	</parent>
 
+	<repositories>
+		<repository>
+			<id>frontlinesms.repo</id>
+			<name>FrontlineSMS Maven repository</name>
+			<url>http://dev.frontlinesms.com/m2repo</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>net.frontlinesms.core</groupId>
